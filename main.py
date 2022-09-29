@@ -10,7 +10,7 @@ def download_video():
     link = input('Digite o link do vídeo: ')
     path = input('Caminho de download: ')
     yt = YouTube(link)
-    ys = yt.streams.filter(only_audio=True).first().download(path)#Faz o download
+    ys = yt.streams.get_highest_resolution().download(path)#Faz o download
     print("Download Completo")
 
 def download_music():
@@ -28,4 +28,4 @@ def download_music():
             os.remove(mp4_path)
     print("Download Completo")
 
-download_music()
+download_video()
