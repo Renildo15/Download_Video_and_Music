@@ -12,6 +12,8 @@ janela = Tk()
 
 janela.geometry("750x520")
 janela.title("Software Download")
+janela.resizable(False, False)
+janela.iconbitmap("imgs/icon.ico")
 
 label_link = Label(janela, text="Digite o link do vídeo:", font=("Courier 12 bold"))
 entry_link = Entry(janela, width=40)
