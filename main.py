@@ -1,11 +1,35 @@
 from importlib.resources import path
 from pytube import YouTube
 from pytube import Playlist
+from tkinter import *
 import moviepy.editor as mp
 import re
 import os
 
+#############################Interface#####################################
 
+janela = Tk()
+
+janela.geometry("750x520")
+janela.title("Software Download")
+
+label_link = Label(janela, text="Digite o link do vídeo:", font=("Courier 12 bold"))
+entry_link = Entry(janela, width=40)
+entry_link.focus_set()
+entry_link.pack()
+
+
+label_path = Label(janela, text="Caminho do download:", font=("Courier 12 bold"))
+entry_path = Entry(janela, width=40)
+entry_path.focus_set()
+entry_path.pack()
+
+label_link.pack()
+label_path.pack()
+
+janela.mainloop()
+
+####################### funções########################################
 def download_video():
     link = input('Digite o link do vídeo: ')
     path = input('Caminho de download: ')
@@ -28,4 +52,4 @@ def download_music():
             os.remove(mp4_path)
     print("Download Completo")
 
-download_video()
+#download_video()
