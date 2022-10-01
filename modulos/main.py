@@ -15,6 +15,8 @@ janela.title("Software Download")
 janela.resizable(False, False)
 janela.iconbitmap("imgs/icon.ico")
 
+
+
 largura = 750
 altura = 520
 
