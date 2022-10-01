@@ -39,8 +39,9 @@ entry_path.pack()
 #########botao###############
 def test(msg):
     print(msg)
-botao = Button(janela, text="Baixar", command=lambda:test("Opa"), width=20, font="San-serif 15 bold", bd=0, bg="red")
+botao = Button(janela, text="Baixar", command=lambda:test("Opa"), width=20, font="San-serif 15 bold", bd=0, bg="red",cursor="star")
 botao.pack()
+#print(botao.keys()) Ver as propriedas
 
 
 
