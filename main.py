@@ -1,6 +1,6 @@
 from pydoc import text
 from tkinter import *
-from funcoes import download_video
+from funcoes import download_video, download_music
 from pytube import YouTube
 from pytube import Playlist
 import moviepy.editor as mp
@@ -49,25 +49,13 @@ def test():
     label_test.config(text = "Provided Input: "+inp_link)
 
 
-def download_music():
-    link = entry_link.get()
-    path = entry_path.get()
-    yt = YouTube(link)
-    ys = yt.streams.filter(only_audio=True).first().download(path)
-
-    for file in os.listdir(path):
-        if re.search('mp4', file):
-            mp4_path = os.path.join(path, file)
-            mp3_path = os.path.join(path, os.path.splitext(file)[0]+'.mp3')
-            new_file = mp.AudioFileClip(mp4_path)
-            new_file.write_audiofile(mp3_path)
-            os.remove(mp4_path)
-    label_test.config(text = "Download Completo", fg="green")
+link_music = entry_link
+path_music = entry_path
+label_test = Label(janela, text="", font=("San-serif 20"), pady=20)
 
 
 
-
-botao = Button(janela, text="Baixar", command=download_music, width=20, font="San-serif 15", bd=0, bg="red",cursor="star")
+botao = Button(janela, text="Baixar", command=lambda: download_music(link_music, path_music, label_test), width=20, font="San-serif 15", bd=0, bg="red",cursor="star")
 label_test = Label(janela, text="", font=("San-serif 20"), pady=20)
 botao.pack()
 label_test.pack()
