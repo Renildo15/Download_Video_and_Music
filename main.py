@@ -21,13 +21,13 @@ posy = altura_janela/2 - altura/2
 janela.geometry("%dx%d+%d+%d" % (largura, altura, posx, posy))
 
 ###########################Elementos da tela#################################
-label_titulo = Label(janela, text="Baixar Música", font=("San-serif 25 bold"))
+label_titulo = Label(janela, text="Baixar Música", font=("San-serif 25 bold"),pady=20)
 label_link = Label(janela, text="Digite o link do vídeo:", font=("San-serif 20 bold"))
-entry_link = Entry(janela, width=40)
+entry_link = Entry(janela, width=40, font=("San-serif 20"))
 entry_link.focus_set()
 
 label_path = Label(janela, text="Caminho do download:", font=("San-serif 20 bold"))
-entry_path = Entry(janela, width=40)
+entry_path = Entry(janela, width=40, font=("San-serif 20"))
 
 label_titulo.pack()
 label_link.pack()
