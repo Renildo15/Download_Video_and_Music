@@ -20,27 +20,27 @@ posy = altura_janela/2 - altura/2
 
 janela.geometry("%dx%d+%d+%d" % (largura, altura, posx, posy))
 
-print(largura_janela, altura_janela)
-
 ###########################Elementos da tela#################################
-label_link = Label(janela, text="Digite o link do vídeo:", font=("Courier 12 bold"))
+label_titulo = Label(janela, text="Baixar Música", font=("San-serif 25 bold"))
+label_link = Label(janela, text="Digite o link do vídeo:", font=("San-serif 20 bold"))
 entry_link = Entry(janela, width=40)
-label_link.grid(row=0, column=6)
-entry_link.grid(row=1, column=6)
 entry_link.focus_set()
 
-label_path = Label(janela, text="Caminho do download:", font=("Courier 12 bold"))
+label_path = Label(janela, text="Caminho do download:", font=("San-serif 20 bold"))
 entry_path = Entry(janela, width=40)
-label_path.grid(row=2, column=6)
-entry_path.grid(row=3, column=3)
 
+label_titulo.pack()
+label_link.pack()
+entry_link.pack()
+label_path.pack()
+entry_path.pack()
 
 
 #########botao###############
 def test(msg):
     print(msg)
-botao = Button(janela, text="Baixar", command=lambda:test("Opa"))
-botao.grid(row=4, column=6)
+botao = Button(janela, text="Baixar", command=lambda:test("Opa"), width=20, font="San-serif 15 bold", bd=0, bg="red")
+botao.pack()
 
 
 
