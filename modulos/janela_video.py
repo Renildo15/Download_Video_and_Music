@@ -1,6 +1,6 @@
 from pydoc import text
 from tkinter import *
-from funcoes import download_music
+from funcoes import download_video
 from pytube import YouTube
 from pytube import Playlist
 import moviepy.editor as mp
@@ -10,7 +10,7 @@ import os
 #############################Interface#####################################
 
 ##################Configurações da janela##################################
-def abrir_janela_music():
+def abrir_janela_video():
 
     janela = Toplevel()
     janela.title("Software Download")
@@ -31,7 +31,7 @@ def abrir_janela_music():
     janela.geometry("%dx%d+%d+%d" % (largura, altura, posx, posy))
 
     ###########################Elementos da tela#################################
-    label_titulo = Label(janela, text="Baixar Música", font=("San-serif 25 bold"),pady=20)
+    label_titulo = Label(janela, text="Baixar Vídeo", font=("San-serif 25 bold"),pady=20)
     label_link = Label(janela, text="Digite o link do vídeo:", font=("San-serif 20 bold"),pady=20)
     entry_link = Entry(janela, width=40, font=("San-serif 20"))
     entry_link.focus_set()
@@ -54,7 +54,7 @@ def abrir_janela_music():
 
 
 
-    botao = Button(janela, text="Baixar", command=lambda: download_music(link_music, path_music, label_test), width=20, font="San-serif 15", bd=0, bg="red",cursor="star")
+    botao = Button(janela, text="Baixar", command=lambda: download_video(link_music, path_music, label_test), width=20, font="San-serif 15", bd=0, bg="red", cursor="star")
     label_test = Label(janela, text="", font=("San-serif 20"), pady=20)
     botao.pack()
     label_test.pack()

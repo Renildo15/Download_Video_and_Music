@@ -5,12 +5,12 @@ import moviepy.editor as mp
 import re
 import os
 ####################### funções########################################
-def download_video():
-    link = input('Digite o link do vídeo: ')
-    path = input('Caminho de download: ')
+def download_video(link_video, path_video, label_test):
+    link = link_video.get()
+    path = path_video.get()
     yt = YouTube(link)
     ys = yt.streams.get_highest_resolution().download(path)#Faz o download
-    print("Download Completo")
+    label_test.config(text = "Download Completo", fg="green")
 
 def download_music(link_music, path_music, label_test):
     link = link_music.get()

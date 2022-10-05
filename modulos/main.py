@@ -1,6 +1,6 @@
 from tkinter import *
-from funcoes import download_video, download_music
-from janela_music import abrir_janela
+from janela_music import abrir_janela_music
+from janela_video import abrir_janela_video
 from pytube import YouTube
 from pytube import Playlist
 import moviepy.editor as mp
@@ -28,8 +28,8 @@ janela_principal.geometry("%dx%d+%d+%d" % (largura, altura, posx, posy))
 
 
 label_titulo = Label(janela_principal, text="Software Download", font=("San-serif 25 bold"),pady=20)
-botao_music = Button(janela_principal, text="Musica", command = abrir_janela, width=20, font="San-serif 15", bd=0, bg="red",cursor="star")
-botao_video = Button(janela_principal, text="Video", width=20, font="San-serif 15", bd=0, bg="red",cursor="star")
+botao_music = Button(janela_principal, text="Musica", command = abrir_janela_music, width=20, font="San-serif 15", bd=0, bg="red",cursor="star")
+botao_video = Button(janela_principal, text="Video", command = abrir_janela_video, width=20, font="San-serif 15", bd=0, bg="red",cursor="star")
 
 
 
