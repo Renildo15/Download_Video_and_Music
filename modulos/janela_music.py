@@ -54,10 +54,10 @@ def abrir_janela_music():
 
 
 
-    botao = Button(janela, text="Baixar", command=lambda: download_music(link_music, path_music, label_test), width=20, font="San-serif 15", bd=0, bg="red",cursor="star")
+    botao = Button(janela, text="Baixar", command=lambda: download_music(link_music, path_music, label_test), width=20, font="San-serif 15", bd=0, bg="red",cursor="star", justify=CENTER, fg="white")
     label_test = Label(janela, text="", font=("San-serif 20"), pady=20)
-    botao.pack()
-    label_test.pack()
+    botao.place(x = 262, y = 350)
+    label_test.place(x = 262, y = 400)
     #print(botao.keys()) Ver as propriedas
 
 
